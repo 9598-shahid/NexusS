@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  @apply bg-[#f8fafc] text-slate-800 antialiased selection:bg-indigo-500/20 selection:text-indigo-900;
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  @apply bg-white border border-slate-200/90 shadow-[0_1px_3px_rgba(15,23,42,0.05),0_10px_25px_-5px_rgba(15,23,42,0.04)];
+}
+
+.glass-card {
+  @apply bg-white border border-slate-200/80 shadow-[0_1px_2px_rgba(15,23,42,0.04)] hover:shadow-[0_8px_20px_rgba(15,23,42,0.08)] hover:border-slate-300 transition-all duration-300;
+}
+
+.prose h1 { @apply text-2xl font-black text-slate-900 mb-6 tracking-tight pb-3 border-b border-slate-200; }
+.prose h2 { @apply text-lg font-bold text-slate-900 mt-8 mb-4 border-b border-slate-100 pb-2; }
+.prose h3 { @apply text-base font-bold text-slate-800 mt-6 mb-3; }
+.prose p { @apply text-slate-600 leading-relaxed mb-4 text-sm; }
+.prose ul { @apply list-disc list-inside space-y-2 mb-4 text-slate-600 text-sm; }
+.prose li { @apply ml-2; }
+.prose strong { @apply font-bold text-slate-900; }
+.prose hr { @apply my-6 border-slate-200; }
+.prose blockquote { @apply border-l-4 border-indigo-500 pl-4 py-1 my-4 bg-indigo-50/50 rounded-r-lg text-slate-700 italic text-sm; }
+.prose pre { @apply bg-slate-900 text-slate-100 p-4 rounded-xl overflow-x-auto text-xs font-mono my-4 border border-slate-800; }
+.prose code { @apply font-mono text-xs bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded border border-slate-200; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dedicated Print Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    background-image: none !important;
+  }
+  
+  nav, aside, button, .no-print {
+    display: none !important;
+  }
+  
+  main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .glass-panel, .glass-card {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+  
+  .text-white {
+    color: #0f172a !important;
+  }
+  
+  .text-slate-400, .text-slate-300 {
+    color: #475569 !important;
+  }
+  
+  .prose {
+    color: #0f172a !important;
+  }
+  
+  .prose h1, .prose h2, .prose h3 {
+    color: #0f172a !important;
+  }
+}

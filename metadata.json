@@ -1,0 +1,6 @@
+{
+  "name": "Nexus Credit Intelligence",
+  "description": "Enterprise-grade AI platform for corporate credit appraisal, risk intelligence, and automated memo generation. Developed by SHAHID Ali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
